@@ -1,34 +1,58 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TrustVault - Audit History</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f6f9; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f4f6f9;
+        }
         h1 { color: #173b68; }
-        table { width: 100%; border-collapse: collapse; background: white; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background: #173b68; color: white; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #173b68;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <h1>TrustVault Audit History</h1>
     <p>Activity recorded for your account.</p>
     <p><a href="/documents">Back to My Documents</a></p>
+
     <table>
         <thead>
-            <tr><th>Action</th><th>Document ID</th><th>Details</th><th>Date and Time</th></tr>
+            <tr>
+                <th>Username</th>
+                <th>Action</th>
+                <th>Document ID</th>
+                <th>Details</th>
+                <th>Date and Time</th>
+            </tr>
         </thead>
         <tbody>
             <tr th:each="log : ${auditLogs}">
+                <td th:text="${log.username}"></td>
                 <td th:text="${log.action}"></td>
                 <td th:text="${log.documentId}"></td>
                 <td th:text="${log.details}"></td>
                 <td th:text="${log.timestamp}"></td>
             </tr>
             <tr th:if="${#lists.isEmpty(auditLogs)}">
-                <td colspan="4">No activity recorded yet.</td>
+                <td colspan="5">No activity recorded yet.</td>
             </tr>
         </tbody>
     </table>
