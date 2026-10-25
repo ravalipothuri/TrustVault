@@ -78,3 +78,13 @@ The following checks were performed during development:
 ## Disclaimer
 
 TrustVault is an educational project and should undergo further security review before production use.
+
+## Test Login Credentials
+
+Test Account 1:
+- Username: userA
+- Password: TestA@123
+
+Test Account 2:
+- Username: userB
+- Password: TestB@123
