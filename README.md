@@ -81,7 +81,7 @@ TrustVault is an educational project and should undergo further security review 
 
 ## Test Login Credentials
 
-Test Account 1:
+Test Account 1: 
 - Username: userA
 - Password: TestA@123
 
